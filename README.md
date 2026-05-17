@@ -23,9 +23,10 @@ Program dijalankan dengan format:
 11. Cek tujuan.txt tidak ada di source `ls amba_files`
 
     `ls amba_files/tujuan.txt`
-12. Cek ukuran file virtual `stat mnt/tujuan.txt
-    wc -c mnt/tujuan.txt`
-13. `fusermount -u mnt`
+12. Cek ukuran file virtual `stat mnt/tujuan.txt`
+
+    `wc -c mnt/tujuan.txt`
+14. `fusermount -u mnt`
 
 Penjelasan `kenz_rescue.c`
 
