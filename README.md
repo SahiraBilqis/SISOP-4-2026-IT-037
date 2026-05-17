@@ -11,19 +11,21 @@ Program dijalankan dengan format:
 
 1. `mkdir mnt`
 2. `cp /home/hira/.cache/vmware/drag_and_drop/Sr0cY8/amba_files.zip .`
-3. Masukkan lagi file amba_files.zip, lalu extract `unzip amba_files.zip
-    rm amba_files.zip`
-4. Compile program `gcc kenz_rescue.c -o kenz_rescue -D_FILE_OFFSET_BITS=64 -Wno-format-truncation -lfuse`
-5. Jalankan FUSE `./kenz_rescue amba_files mnt`
-6. (buka terminal baru) Cek hasil mount `ls mnt`
-7. Cek passthrough `cat mnt/1.txt`
-8. `for i in 1 2 3 4 5 6 7; do diff mnt/$i.txt amba_files/$i.txt && echo "$i.txt OK"; done`
-9. Cek file virtual `cat mnt/tujuan.txt`
-10. Cek tujuan.txt tidak ada di source `ls amba_files
-    ls amba_files/tujuan.txt`
-11. Cek ukuran file virtual `stat mnt/tujuan.txt
+3. Masukkan lagi file amba_files.zip, lalu extract `unzip amba_files.zip`
+
+   `rm amba_files.zip`
+5. Compile program `gcc kenz_rescue.c -o kenz_rescue -D_FILE_OFFSET_BITS=64 -Wno-format-truncation -lfuse`
+6. Jalankan FUSE `./kenz_rescue amba_files mnt`
+7. (buka terminal baru) Cek hasil mount `ls mnt`
+8. Cek passthrough `cat mnt/1.txt`
+9. `for i in 1 2 3 4 5 6 7; do diff mnt/$i.txt amba_files/$i.txt && echo "$i.txt OK"; done`
+10. Cek file virtual `cat mnt/tujuan.txt`
+11. Cek tujuan.txt tidak ada di source `ls amba_files`
+
+    `ls amba_files/tujuan.txt`
+12. Cek ukuran file virtual `stat mnt/tujuan.txt
     wc -c mnt/tujuan.txt`
-12. `fusermount -u mnt`
+13. `fusermount -u mnt`
 
 Penjelasan `kenz_rescue.c`
 
